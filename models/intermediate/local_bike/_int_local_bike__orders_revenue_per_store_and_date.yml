@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: int_local_bike__orders_revenue_per_store_and_date
+    description: '{{ doc("int_local_bike__orders_revenue_per_store_and_date") }}'
+
+    columns:
+      - name: store_name
+        description: "The customer facing name of the store."
+        tests:
+          - not_null
+
+      - name: order_id
+        description: "Primary key, unique identifier for each order."
+        tests:
+          - unique
+          - not_null
+
+      - name: cust_state
+        description: "The state the customer is located at"
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "The date the order was placed at"
+        tests:
+          - not_null
+
+      - name: order_status
+        description: "The date the order was placed at"
+        tests:
+          - not_null
+          - accepted_values:
+              name: accepted_values_order_status
+              values: [1,2,3,4]
+
+      - name: total_order_amount_before_discount
+        description: "The total amount per order before any discount"
+        tests:
+          - not_null
+
+      - name: total_order_discount
+        description: "The total amount of discount given per order"
+        tests:
+          - not_null
+
+      - name: total_order_amount_after_discount
+        description: "The total amount charged after all discounts were given"
+        tests:
+          - not_null
+
+

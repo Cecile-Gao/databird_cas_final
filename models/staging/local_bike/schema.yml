@@ -1,0 +1,131 @@
+version: 2
+
+models:
+  - name: stg_local_bike__brands
+    description: "This model contains information about all brands"
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each brand. Use to link to products table."
+        tests:
+            - unique
+            - not_null
+      - name: brand_name
+        description: "Brand name"
+        tests:
+            - unique
+            - not_null
+
+
+  - name: stg_local_bikes__categories
+    description: "This model contains information about bike categories."
+    columns:
+      - name: category_id
+        description: "Primary key, unique identifier for each category. Use to link to products table."
+        tests:
+            - unique
+            - not_null
+      - name: category_name
+        description: "Bike category name."
+        tests:
+            - unique
+            - not_null
+
+
+
+  - name: stg_local_bike__customers
+    description: "This model contains information about all customers."
+    columns:
+      - name: customer_id
+        description: "Primary key, unique identifier for each customer. Use to link to orders table."
+        tests:
+            - unique
+            - not_null
+
+
+
+  - name: stg_local_bikes__order_items
+    description: "This model contains information about the content of each orders."
+    columns:
+      - name: order_product_id
+        description: "Primary key, unique identifier for each row."
+        tests:
+            - unique
+            - not_null
+      - name: order_id
+        description: "Order number, use to link orders table"
+        tests:
+            - not_null
+
+
+
+  - name: stg_local_bikes__orders
+    description: "This model contains information about each order."
+    columns:
+      - name: order_id
+        description: "Primary key, unique identifier for each row. Use to link to order_items table"
+        tests:
+            - unique
+            - not_null
+      - name: store_id
+        description: "Foreign key to stores table"
+        tests:
+            - not_null
+
+
+
+  - name: stg_local_bikes__products
+    description: "This model contains information about products."
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each row. Use to link to order_items table"
+        tests:
+            - unique
+            - not_null
+      - name: brand_id
+        description: "Foreign key to brands table"
+        tests:
+            - not_null
+
+
+
+  - name: stg_local_bikes__staffs
+    description: "This model contains information about staffs."
+    columns:
+      - name: staff_id
+        description: "Primary key, unique identifier for each staff member. Use to link to orders table"
+        tests:
+            - unique
+            - not_null
+      - name: store_id
+        description: "Foreign key to stores table"
+        tests:
+            - not_null
+
+
+
+  - name: stg_local_bikes__stocks
+    description: "This model contains information about product stocks for each store."
+    columns:
+      - name: store_product_id
+        description: "Primary key, unique identifier for each row."
+        tests:
+            - unique
+            - not_null
+      - name: store_id
+        description: "Foreign key to stores table"
+        tests:
+            - not_null
+
+
+
+  - name: stg_local_bikes__stores
+    description: "This model contains information about stores."
+    columns:
+      - name: store_id
+        description: "Primary key, unique identifier for each store. Use to link to orders and stocks table"
+        tests:
+            - unique
+            - not_null
+
+
+
