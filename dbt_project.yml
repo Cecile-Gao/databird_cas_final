@@ -54,6 +54,5 @@ models:
 
     mart:
       materialized: table
-      local_bike:
-        schema: mart_local_bike
+      schema: mart_local_bike
 
