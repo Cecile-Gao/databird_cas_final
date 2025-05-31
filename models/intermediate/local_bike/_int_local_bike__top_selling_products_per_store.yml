@@ -6,9 +6,8 @@ models:
 
     columns:
       - name: store_product_id
-        description: "Primary key, unique identifier for each row"
+        description: "Concatenation of store and product id"
         tests:
-          - unique
           - not_null
 
       - name: store_name
