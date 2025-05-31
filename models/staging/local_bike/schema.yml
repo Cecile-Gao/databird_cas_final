@@ -16,7 +16,7 @@ models:
             - not_null
 
 
-  - name: stg_local_bikes__categories
+  - name: stg_local_bike__categories
     description: "This model contains information about bike categories."
     columns:
       - name: category_id
@@ -42,8 +42,7 @@ models:
             - not_null
 
 
-
-  - name: stg_local_bikes__order_items
+  - name: stg_local_bike__order_items
     description: "This model contains information about the content of each orders."
     columns:
       - name: order_product_id
@@ -58,7 +57,7 @@ models:
 
 
 
-  - name: stg_local_bikes__orders
+  - name: stg_local_bike__orders
     description: "This model contains information about each order."
     columns:
       - name: order_id
@@ -73,7 +72,7 @@ models:
 
 
 
-  - name: stg_local_bikes__products
+  - name: stg_local_bike__products
     description: "This model contains information about products."
     columns:
       - name: product_id
@@ -88,7 +87,7 @@ models:
 
 
 
-  - name: stg_local_bikes__staffs
+  - name: stg_local_bike__staffs
     description: "This model contains information about staffs."
     columns:
       - name: staff_id
@@ -103,7 +102,7 @@ models:
 
 
 
-  - name: stg_local_bikes__stocks
+  - name: stg_local_bike__stocks
     description: "This model contains information about product stocks for each store."
     columns:
       - name: store_product_id
@@ -118,7 +117,7 @@ models:
 
 
 
-  - name: stg_local_bikes__stores
+  - name: stg_local_bike__stores
     description: "This model contains information about stores."
     columns:
       - name: store_id
