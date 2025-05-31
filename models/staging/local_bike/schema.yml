@@ -95,10 +95,6 @@ models:
         tests:
             - unique
             - not_null
-      - name: store_id
-        description: "Foreign key to stores table"
-        tests:
-            - not_null
 
 
 
