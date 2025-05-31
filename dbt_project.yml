@@ -43,16 +43,17 @@ models:
   my_new_project:
 
     staging:
-      materialized: view
+      +materialized: view
       local_bike:
         schema: stg_local_bike
 
     intermediate:
-      materialized: view
+      +materialized: view
       local_bike:
         schema: int_local_bike
 
     mart:
-      materialized: table
-      schema: mart_local_bike
+      +materialized: table
+      schema : mart
+    
 

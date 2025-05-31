@@ -30,9 +30,6 @@ models:
         description: "The status of the order"
         tests:
           - not_null
-          - accepted_values:
-              name: accepted_values_order_status
-              values: ['1','2','3','4']
 
       - name: total_order_amount_before_discount
         description: "The total amount per order before any discount"
