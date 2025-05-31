@@ -27,7 +27,7 @@ models:
           - not_null
 
       - name: order_status
-        description: "The date the order was placed at"
+        description: "The status of the order"
         tests:
           - not_null
           - accepted_values:
