@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: mrt_local_bike__daily_store_sales
+    description: '{{ doc("mrt_local_bike__daily_store_sales") }}'
+
+    columns:
+      - name: store_name
+        description: "The customer facing store name."
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "The date the order was placed at."
+        tests:
+          - not_null
+
+      - name: total_nb_orders
+        description: "The total number of orders placed on the selected date"
+        tests:
+          - not_null
+
+      - name: total_sales_undiscounted
+        description: "The total revenue of sales before any discounts (full price)"
+        tests:
+          - not_null
+
+      - name: total_sales_discounted
+        description: "The total revenue of sales after all discounts were applied"
+        tests:
+          - not_null
+
+      - name: total_discount_given
+        description: "The total amount of discount given"
+        tests:
+          - not_null
+
+      - name: global_daily_discount
+        description: "The global discount rate applied on the selected date, as percentage of the day's global undiscounted revenue" 
+        tests:
+          - not_null
