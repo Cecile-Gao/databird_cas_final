@@ -25,7 +25,3 @@ models:
         tests:
           - not_null
 
-      - name: total_sales_discounted
-        description: "The total revenue of sales after all discounts were applied"
-        tests:
-          - not_null
