@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: int_local_bike__customers_per_store_and_location
+    description: '{{ doc("int_local_bike__customers_per_store_and_location") }}'
+
+    columns:
+      - name: store_cust_city
+        description: "Primary key, unique identifier for each row."
+        tests:
+          - unique
+          - not_null
+
+      - name: store_state
+        description: "State the store is located at."
+        tests:
+          - not_null
+          - accepted_values:
+              name: accepted_values_store_state
+              values: ['CA','NY','TX']
+
+      - name: store_city
+        description: "City the store is located at."
+        tests:
+          - not_null
+
+      - name: store_name
+        description: "Customer facing name of store."
+        tests:
+          - not_null
+          - accepted_values:
+              name: accepted_values_store_name
+              values: ['Santa Cruz Bikes', 'Baldwin Bikes', 'Rowlett Bikes']
+
+      - name: cust_city
+        description: "City the customer is located at"
+        tests:
+          - not_null
+          - relationships:
+              name: cust_city_foreign_key_in_stg_local_bike__customers
+              to: ref('stg_local_bike__customers')
+              field: cust_city
+
+      - name: total_customers
+        description: "Number of customers agregated at customer city level"
+        tests:
+          - not_null
+
+
+
+
+    
